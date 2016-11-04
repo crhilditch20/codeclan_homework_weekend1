@@ -59,8 +59,10 @@ def add_pet_to_stock(hash_name, new_pet_hash)
   hash_name[:pets].push(new_pet_hash)
 end
 
-# def customer_pet_count(customer_array)
-#   for customer in customer_array
-    
-#   end
-# end
+def customer_pet_count(customer)
+  customer[:pets].length
+end
+
+def add_pet_to_customer(customer, new_pet_hash)
+  customer[:pets] << new_pet_hash
+end
