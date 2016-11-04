@@ -14,3 +14,8 @@ end
 def pets_sold(hash_name)
   return hash_name[:admin][:pets_sold]
 end
+
+def increase_pets_sold(hash_name, number_pets_sold)
+  current_pets_sold = hash_name[:admin][:pets_sold]
+  return hash_name[:admin][:pets_sold] = (current_pets_sold+number_pets_sold)
+end
