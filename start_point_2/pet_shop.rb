@@ -25,21 +25,10 @@ def stock_count(hash_name)
   return hash_name[:pets].length
 end
 
-# def pets_by_breed(pet_shop, breed)
-#   found = []
-#   pets = pet_shop[:pets]
-
-#   for pet in pets
-#     found << pet if pet[:breed] == breed
-#   end
-#   return found
-# end
-
-
 def pets_by_breed(hash_name, given_breed)
   breeds_found_array = []
-  type = hash_name[:pets]
-  for pet in type
+  pets = hash_name[:pets]
+  for pet in pets
     if (pet[:breed] == given_breed)
       breeds_found_array << pet
     end
