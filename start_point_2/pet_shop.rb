@@ -1,3 +1,4 @@
+
 def pet_shop_name(hash_name)
   return hash_name[:name]
 end
@@ -18,4 +19,30 @@ end
 def increase_pets_sold(hash_name, number_pets_sold)
   current_pets_sold = hash_name[:admin][:pets_sold]
   return hash_name[:admin][:pets_sold] = (current_pets_sold+number_pets_sold)
+end
+
+def stock_count(hash_name)
+  return hash_name[:pets].length
+end
+
+# def pets_by_breed(pet_shop, breed)
+#   found = []
+#   pets = pet_shop[:pets]
+
+#   for pet in pets
+#     found << pet if pet[:breed] == breed
+#   end
+#   return found
+# end
+
+
+def pets_by_breed(hash_name, given_breed)
+  breeds_found_array = []
+  type = hash_name[:pets]
+  for pet in type
+    if (pet[:breed] == given_breed)
+      breeds_found_array << pet
+    end
+  end
+  return breeds_found_array
 end
