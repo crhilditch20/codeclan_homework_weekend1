@@ -67,6 +67,8 @@ def add_pet_to_customer(customer, new_pet_hash)
   customer[:pets] << new_pet_hash
 end
 
+#optional ones
+
 def customer_can_afford_pet(customer, new_pet_hash)
   if customer[:cash] >= new_pet_hash[:price]
     return true
@@ -75,5 +77,13 @@ def customer_can_afford_pet(customer, new_pet_hash)
   end
 end
 
-
+def sell_pet_to_customer(hash_name, pet, customer)
+  if pet != nil
+    if customer_can_afford_pet(customer, pet)
+    customer[:pets] << pet
+    hash_name[:admin][:pets_sold] = 1
+    hash_name[:admin][:total_cash] = (hash_name[:admin][:total_cash]+pet[:price]) 
+    end
+  end
+end
 
