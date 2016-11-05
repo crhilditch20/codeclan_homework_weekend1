@@ -66,3 +66,14 @@ end
 def add_pet_to_customer(customer, new_pet_hash)
   customer[:pets] << new_pet_hash
 end
+
+def customer_can_afford_pet(customer, new_pet_hash)
+  if customer[:cash] >= new_pet_hash[:price]
+    return true
+  else
+    return false
+  end
+end
+
+
+
